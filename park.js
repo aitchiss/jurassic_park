@@ -42,10 +42,10 @@ Park.prototype = {
     var total = 0
     for (var i= 0; i < noOfYears; i++){
       for (dino of this.enclosure){
-        total += 1
         total += dino.offspringPerYear
       }
     }
+    total += this.enclosure.length
     return total
   }
 
