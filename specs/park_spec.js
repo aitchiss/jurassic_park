@@ -56,4 +56,10 @@ describe('Park', function(){
     park.addToEnclosure(plesiosaur)
     assert.strictEqual(21, park.numberOfFutureDinos(2))
   })
+
+  it('can calculate no of dinos after 2 years(starting with 2)', function(){
+    park.addToEnclosure(plesiosaur)
+    park.addToEnclosure(plesiosaur)
+    assert.strictEqual(42, park.numberOfFutureDinos(2))
+  })
 })
