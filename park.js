@@ -9,18 +9,23 @@ Park.prototype = {
   },
 
   removeAllTypeFromEnclosure(type){
-    var dinosToDelete = []
-    for (var i = 0; i < this.enclosure.length; i++){
-      var dinosaur = this.enclosure[i]
-      if (dinosaur.type === type){
-        dinosToDelete.push(dinosaur)
-      }
-    }
+    var dinosToDelete = this.identifyDinosaurs(type)
 
     for (dino of dinosToDelete){
       var index = this.enclosure.indexOf(dino)
       this.enclosure.splice(index, 1)
     }
+  },
+
+  identifyDinosaurs: function(type){
+    var dinos = []
+    for (var i = 0; i < this.enclosure.length; i++){
+      var dinosaur = this.enclosure[i]
+      if (dinosaur.type === type){
+        dinos.push(dinosaur)
+      }
+    }
+    return dinos
   }
 }
 
