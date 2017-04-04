@@ -39,15 +39,19 @@ Park.prototype = {
   },
 
   numberOfFutureDinos: function(noOfYears){
-    var total = 0
-    for (var i= 0; i < noOfYears; i++){
-      for (dino of this.enclosure){
-        total += dino.offspringPerYear
+    var total = this.enclosure.length
+    for (dino of this.enclosure){
+      if (noOfYears > 1){
+        var noToAdd = Math.pow(dino.offspringPerYear, noOfYears)
+        total += noToAdd
       }
+      total += dino.offspringPerYear
     }
-    total += this.enclosure.length
+    
     return total
   }
+
+
 
 }
 
