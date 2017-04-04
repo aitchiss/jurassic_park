@@ -36,6 +36,17 @@ Park.prototype = {
       }
     }
     return foundDinos
+  },
+
+  numberOfFutureDinos: function(noOfYears){
+    var total = 0
+    for (var i= 0; i < noOfYears; i++){
+      for (dino of this.enclosure){
+        total += 1
+        total += dino.offspringPerYear
+      }
+    }
+    return total
   }
 
 }

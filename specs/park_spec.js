@@ -45,6 +45,10 @@ describe('Park', function(){
     park.addToEnclosure(pterodactyl)
     var dinosWithMoreThanTwoOffspringAYear = park.moreThanTwoOffspringAYear()
     assert.strictEqual(5, dinosWithMoreThanTwoOffspringAYear.length)
+  })
 
+  it('can calculate no of dinos after one year (starting with one)', function(){
+    park.addToEnclosure(plesiosaur)
+    assert.strictEqual(5, park.numberOfFutureDinos(1))
   })
 })
