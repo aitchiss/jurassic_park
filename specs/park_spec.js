@@ -35,4 +35,16 @@ describe('Park', function(){
     park.removeAllTypeFromEnclosure('Plesiosaur')
     assert.strictEqual(4, park.enclosure.length)
   })
+
+  it('can find all dinosaurs with more than 2 offspring a year', function(){
+    park.addToEnclosure(plesiosaur)
+    park.addToEnclosure(plesiosaur)
+    park.addToEnclosure(stegosaurus)
+    park.addToEnclosure(stegosaurus)
+    park.addToEnclosure(stegosaurus)
+    park.addToEnclosure(pterodactyl)
+    var dinosWithMoreThanTwoOffspringAYear = park.moreThanTwoOffspringAYear()
+    assert.strictEqual(5, dinosWithMoreThanTwoOffspringAYear.length)
+
+  })
 })

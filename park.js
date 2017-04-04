@@ -26,7 +26,18 @@ Park.prototype = {
       }
     }
     return dinos
+  },
+
+  moreThanTwoOffspringAYear: function(){
+    var foundDinos = []
+    for (dino of this.enclosure){
+      if (dino.offspringPerYear > 2){
+        foundDinos.push(dino)
+      }
+    }
+    return foundDinos
   }
+
 }
 
 module.exports = Park
